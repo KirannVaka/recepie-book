@@ -1,8 +1,18 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Favorites from "./components/Fovorites";
+import Modal from "./components/Modal";
+import Search from "./components/Search";
+import Meals from "./components/Meals";
 
 function App() {
-  return <main>Recepie Book</main>;
+  return (
+    <>
+      {/* <Search /> */}
+      {/* <Favorites /> */}
+      <Meals />
+      {/* <Modal /> */}
+    </>
+  );
 }
 
 export default App;
