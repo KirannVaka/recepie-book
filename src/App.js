@@ -6,12 +6,12 @@ import Meals from "./components/Meals";
 
 function App() {
   return (
-    <>
+    <main>
       {/* <Search /> */}
       {/* <Favorites /> */}
       <Meals />
       {/* <Modal /> */}
-    </>
+    </main>
   );
 }
 
