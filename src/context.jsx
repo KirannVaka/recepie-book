@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 const AppContext = React.createContext();
 
-const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=a";
+const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 const useGolbalContext = () => {
@@ -15,8 +15,15 @@ const AppProvider = ({ children }) => {
 
   const [loading, setLoading] = useState(false);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const fetchRandomMeal = () => {
+    fetchMeals(randomMealUrl);
+  };
+
   const fetchMeals = async (url) => {
     setLoading(true);
+
     try {
       const { data } = await axios.get(url);
       data.meals ? setMeals(data.meals) : setMeals([]); //set to empty if no data returns otherwise push data
@@ -27,11 +34,13 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchMeals(allMealsUrl);
-  }, []);
+    fetchMeals(`${allMealsUrl}${searchTerm}`);
+  }, [searchTerm]);
 
   return (
-    <AppContext.Provider value={{ meals, loading }}>
+    <AppContext.Provider
+      value={{ loading, meals, setSearchTerm, fetchRandomMeal }}
+    >
       {children}
     </AppContext.Provider>
   );
