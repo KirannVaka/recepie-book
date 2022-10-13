@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 
 const AppContext = React.createContext();
 
-const AppProvider = ({ children }) => {
-  return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
+const useGolbalContext = () => {
+  return useContext(AppContext);
 };
 
-export { AppContext, AppProvider };
+const AppProvider = ({ children }) => {
+  return (
+    <AppContext.Provider value={{ name: "John", role: "Student" }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
+
+export { AppContext, AppProvider, useGolbalContext };

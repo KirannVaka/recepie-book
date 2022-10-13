@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { AppContext } from "../context";
+import { useGolbalContext } from "../context";
 
 const Meals = () => {
-  const context = useContext(AppContext);
+  const context = useGolbalContext();
   console.log(context);
   return <h1>Meals Component</h1>;
 };
