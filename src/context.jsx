@@ -11,12 +11,12 @@ const useGolbalContext = () => {
 };
 
 const AppProvider = ({ children }) => {
-  const [meals, setMeals] = useState({});
+  const [meals, setMeals] = useState([]);
 
   const fetchMeals = async (url) => {
     try {
       const { data } = await axios.get(url);
-      setMeals(data);
+      setMeals(data.meals);
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +26,9 @@ const AppProvider = ({ children }) => {
     fetchMeals(allMealsUrl);
   }, []);
 
-  return <AppContext.Provider value={meals}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={{ meals }}>{children}</AppContext.Provider>
+  );
 };
 
 export { AppContext, AppProvider, useGolbalContext };
