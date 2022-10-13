@@ -19,7 +19,7 @@ const AppProvider = ({ children }) => {
     setLoading(true);
     try {
       const { data } = await axios.get(url);
-      setMeals(data.meals);
+      data.meals ? setMeals(data.meals) : setMeals([]); //set to empty if no data returns otherwise push data
     } catch (error) {
       console.log(error);
     }
