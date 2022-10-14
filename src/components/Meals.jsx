@@ -1,8 +1,9 @@
 import { useGolbalContext } from "../context";
-import { BsHandThumbsUp } from "react-icons/bs";
+import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
 
 const Meals = () => {
-  const { meals, loading, selectMeal, addToFavorites } = useGolbalContext();
+  const { meals, loading, selectMeal, addToFavorites, favorites } =
+    useGolbalContext();
 
   if (loading) {
     return (
@@ -30,7 +31,7 @@ const Meals = () => {
               src={image}
               alt={"picture of" + image}
               className="img"
-              onClick={() => selectMeal(idMeal)}
+              onClick={() => selectMeal(idMeal, false)}
             />
             <footer>
               <h5>{title}</h5>
@@ -38,7 +39,11 @@ const Meals = () => {
                 className="like-btn"
                 onClick={() => addToFavorites(idMeal)}
               >
-                <BsHandThumbsUp />
+                {favorites.find((meal) => meal.idMeal === idMeal) ? (
+                  <BsHandThumbsUpFill />
+                ) : (
+                  <BsHandThumbsUp />
+                )}
               </button>
             </footer>
           </article>

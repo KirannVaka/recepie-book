@@ -11,8 +11,13 @@ function Favorites() {
           {favorites.map((meal) => {
             const { strMealThumb: image, idMeal, strMeal: title } = meal;
             return (
-              <div key={idMeal}>
-                <img src={image} alt={title} className="favorite-img img" />
+              <div key={idMeal} className="favorite-item">
+                <img
+                  src={image}
+                  alt={title}
+                  className="favorite-img img"
+                  onClick={() => selectMeal(idMeal, true)}
+                />
                 <button
                   className="remove-btn"
                   onClick={() => removeFromFavorites(idMeal)}

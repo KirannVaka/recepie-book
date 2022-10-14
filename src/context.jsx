@@ -6,6 +6,11 @@ const AppContext = React.createContext();
 const allMealsUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const randomMealUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
 
+const getFavoritesFromLocalStorage = () => {
+  let favoriteMeals = localStorage.getItem("favoriteMeals");
+  return favoriteMeals ? JSON.parse(favoriteMeals) : [];
+};
+
 const useGolbalContext = () => {
   return useContext(AppContext);
 };
@@ -16,7 +21,7 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectedMeal, setSelectedMeal] = useState("");
-  const [favorites, setFovorites] = useState([]);
+  const [favorites, setFovorites] = useState(getFavoritesFromLocalStorage());
 
   const fetchMeals = async (url) => {
     setLoading(true);
@@ -39,7 +44,11 @@ const AppProvider = ({ children }) => {
 
   const selectMeal = (idMeal, favoriteMeal) => {
     let meal;
-    meal = meals.find((meal) => meal.idMeal === idMeal);
+    if (favoriteMeal) {
+      meal = favorites.find((meal) => meal.idMeal === idMeal);
+    } else {
+      meal = meals.find((meal) => meal.idMeal === idMeal);
+    }
     setSelectedMeal(meal);
     setShowModal(true);
   };
@@ -48,12 +57,15 @@ const AppProvider = ({ children }) => {
     const alreadyFovorite = favorites.find((meal) => meal.idMeal === idMeal);
     if (alreadyFovorite) return;
     const favoriteMeal = meals.find((meal) => meal.idMeal === idMeal);
-    setFovorites([...favorites, favoriteMeal]);
+    const updatedFovoriteMeals = [...favorites, favoriteMeal];
+    setFovorites(updatedFovoriteMeals);
+    localStorage.setItem("favoriteMeals", JSON.stringify(updatedFovoriteMeals));
   };
 
   const removeFromFavorites = (idMeal) => {
     const updatedFavorites = favorites.filter((meal) => meal.idMeal !== idMeal);
     setFovorites(updatedFavorites);
+    localStorage.setItem("favoriteMeals", JSON.stringify(updatedFavorites));
   };
 
   useEffect(() => {
