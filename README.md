@@ -17,7 +17,7 @@ Access my site at [google.com](https://google.com) -->
 
 ## About The App
 
-Recepie Book is a react website, that provides you recepies for diffrent cuisines. You can add your favorite recepies to try them out later.
+Recepie Book is a react website, that provides you recepies for different cuisines. You can add recepies you would like to try out later to the favorites bar. These will available for you when you visit the website again.
 
 ## Screenshots
 
