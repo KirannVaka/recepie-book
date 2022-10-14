@@ -6,11 +6,11 @@ import Meals from "./components/Meals";
 import { useGolbalContext } from "./context";
 
 function App() {
-  const { showModal, setShowModal } = useGolbalContext();
+  const { showModal, favorites } = useGolbalContext();
   return (
     <main>
       <Search />
-      {/* <Favorites /> */}
+      {favorites.length > 0 && <Favorites />}
       <Meals />
       {showModal && <Modal />}
     </main>

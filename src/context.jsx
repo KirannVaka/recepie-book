@@ -16,6 +16,22 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectedMeal, setSelectedMeal] = useState("");
+  const [favorites, setFovorites] = useState([]);
+
+  const fetchMeals = async (url) => {
+    setLoading(true);
+    try {
+      const { data } = await axios.get(url);
+      data.meals ? setMeals(data.meals) : setMeals([]); //set to empty if no data returns otherwise push data
+    } catch (error) {
+      console.log(error);
+    }
+    setLoading(false);
+  };
+
+  const fetchRandomMeal = () => {
+    fetchMeals(randomMealUrl);
+  };
 
   const closeModal = () => {
     setShowModal(false);
@@ -28,20 +44,16 @@ const AppProvider = ({ children }) => {
     setShowModal(true);
   };
 
-  const fetchRandomMeal = () => {
-    fetchMeals(randomMealUrl);
+  const addToFavorites = (idMeal) => {
+    const alreadyFovorite = favorites.find((meal) => meal.idMeal === idMeal);
+    if (alreadyFovorite) return;
+    const favoriteMeal = meals.find((meal) => meal.idMeal === idMeal);
+    setFovorites([...favorites, favoriteMeal]);
   };
 
-  const fetchMeals = async (url) => {
-    setLoading(true);
-
-    try {
-      const { data } = await axios.get(url);
-      data.meals ? setMeals(data.meals) : setMeals([]); //set to empty if no data returns otherwise push data
-    } catch (error) {
-      console.log(error);
-    }
-    setLoading(false);
+  const removeFromFavorites = (idMeal) => {
+    const updatedFavorites = favorites.filter((meal) => meal.idMeal !== idMeal);
+    setFovorites(updatedFavorites);
   };
 
   useEffect(() => {
@@ -66,6 +78,9 @@ const AppProvider = ({ children }) => {
         selectedMeal,
         setSelectedMeal,
         closeModal,
+        favorites,
+        addToFavorites,
+        removeFromFavorites,
       }}
     >
       {children}
