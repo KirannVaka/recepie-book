@@ -4,7 +4,6 @@ function Modal() {
   const { selectedMeal, closeModal } = useGolbalContext();
 
   const {
-    idMeal,
     strMeal: title,
     strMealThumb: image,
     strInstructions: text,
