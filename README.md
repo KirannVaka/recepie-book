@@ -22,11 +22,11 @@ Recepie Book is a react website, that provides you recepies for different cuisin
 ## Screenshots
 
 - Screenshot of Home Page
-
-  <img src="https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154625.jpg" width=40% height=40%>
+  \
+   <img src="https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154625.jpg" width=40% height=40%>
 
 - Screenshot of Modal Page
-
+  \
   <img src="https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154723.jpg" width=40% height=40%>
 
 ## Technologies
