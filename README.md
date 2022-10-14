@@ -26,7 +26,8 @@ Screenshot of [Modal View](https://github.com/KirannVaka/recepie-book/blob/maste
 
 ## Technologies
 
-I used `html`, `css`, ...
+I used `React` to build the project.
+Used depedencies and packages are `bootstarp, axios, react-icons and context`
 
 ## Setup
 
@@ -38,4 +39,4 @@ I adopted the `BEM` naming style for my css class names and ... -->
 
 ## Status
 
-[name of project] is still in progress. `Version 2` will be out soon.
+[Recepie-Book] is still in progress. `Version 2` will be out soon.
