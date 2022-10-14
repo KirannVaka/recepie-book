@@ -12,14 +12,14 @@ const useGolbalContext = () => {
 
 const AppProvider = ({ children }) => {
   const [meals, setMeals] = useState([]);
-
   const [loading, setLoading] = useState(false);
-
   const [searchTerm, setSearchTerm] = useState("");
-
   const [showModal, setShowModal] = useState(false);
-
   const [selectedMeal, setSelectedMeal] = useState("");
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const selectMeal = (idMeal, favoriteMeal) => {
     let meal;
@@ -65,6 +65,7 @@ const AppProvider = ({ children }) => {
         selectMeal,
         selectedMeal,
         setSelectedMeal,
+        closeModal,
       }}
     >
       {children}
