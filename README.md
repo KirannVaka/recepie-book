@@ -23,7 +23,7 @@ Recepie Book is a react website, that provides you recepies for different cuisin
 
 - Screenshot of [Home Page](https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154723.jpg)
 - Screenshot of [Modal View](https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154625.jpg)
-  -![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
+- ![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
 
 ## Technologies
 
