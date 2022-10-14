@@ -21,8 +21,8 @@ Recepie Book is a react website, that provides you recepies for different cuisin
 
 ## Screenshots
 
-Scrrenshot of [Home Page](https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154723.jpg)
-Screenshot of [Modal View](https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154625.jpg)
+- Scrrenshot of [Home Page](https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154723.jpg)
+- Screenshot of [Modal View](https://github.com/KirannVaka/recepie-book/blob/master/src/images/Screenshot%202022-10-14%20154625.jpg)
 
 ## Technologies
 
