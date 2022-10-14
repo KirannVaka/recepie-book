@@ -21,8 +21,10 @@ function Modal() {
           <a href={source} target="_blank" rel="noreferrer">
             Original Source
           </a>
+          <button className="btn btn-hipster close-btn" onClick={closeModal}>
+            close
+          </button>
         </div>
-        <button onClick={closeModal}>close</button>
       </div>
     </aside>
   );
