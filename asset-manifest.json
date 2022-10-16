@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/repositoryname/recepie-book/static/css/main.160cfeaa.css",
-    "main.js": "/repositoryname/recepie-book/static/js/main.db43612c.js",
-    "static/js/787.dbf102a5.chunk.js": "/repositoryname/recepie-book/static/js/787.dbf102a5.chunk.js",
-    "index.html": "/repositoryname/recepie-book/index.html",
-    "main.160cfeaa.css.map": "/repositoryname/recepie-book/static/css/main.160cfeaa.css.map",
-    "main.db43612c.js.map": "/repositoryname/recepie-book/static/js/main.db43612c.js.map",
-    "787.dbf102a5.chunk.js.map": "/repositoryname/recepie-book/static/js/787.dbf102a5.chunk.js.map"
+    "main.css": "/recepie-book/static/css/main.160cfeaa.css",
+    "main.js": "/recepie-book/static/js/main.2a759c81.js",
+    "static/js/787.dbf102a5.chunk.js": "/recepie-book/static/js/787.dbf102a5.chunk.js",
+    "index.html": "/recepie-book/index.html",
+    "main.160cfeaa.css.map": "/recepie-book/static/css/main.160cfeaa.css.map",
+    "main.2a759c81.js.map": "/recepie-book/static/js/main.2a759c81.js.map",
+    "787.dbf102a5.chunk.js.map": "/recepie-book/static/js/787.dbf102a5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.160cfeaa.css",
-    "static/js/main.db43612c.js"
+    "static/js/main.2a759c81.js"
   ]
 }
